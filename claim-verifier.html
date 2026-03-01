@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>论点验证 - AI Signal Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./assets/claim-verifier.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <div class="hero-headline">
+          <img class="hero-logo" src="./assets/logo.svg" alt="AI Signal Board Logo" />
+          <div>
+            <p class="hero-tag">AI NEWS INTELLIGENCE</p>
+            <h1>论点验证系统</h1>
+          </div>
+        </div>
+        <p class="hero-sub">
+          基于 AI 新闻的智能分析，验证你的论点或声明
+        </p>
+      </header>
+
+      <!-- 输入区 -->
+      <section class="input-section">
+        <h2>🎯 提交你的论点</h2>
+
+        <div class="input-group">
+          <textarea
+            id="claim-input"
+            placeholder="例如: GPT-5 将在 2025 年发布"
+            rows="3"
+            maxlength="500"
+          ></textarea>
+          <div class="char-count">
+            <span id="char-current">0</span>/500
+          </div>
+        </div>
+
+        <div class="parameters">
+          <div class="param-group">
+            <label for="time-window">时间范围</label>
+            <select id="time-window">
+              <option value="1">1天</option>
+              <option value="3">3天</option>
+              <option value="7" selected>7天</option>
+              <option value="30">30天</option>
+              <option value="custom">自定义...</option>
+            </select>
+          </div>
+
+          <div class="param-group" id="custom-dates" style="display: none;">
+            <label>自定义日期范围</label>
+            <input type="date" id="date-start" />
+            <span>至</span>
+            <input type="date" id="date-end" />
+          </div>
+
+          <div class="param-group">
+            <label for="llm-model">AI 模型</label>
+            <select id="llm-model">
+              <option value="fast">Fast (GPT-4o mini)</option>
+              <option value="standard">Standard (GPT-4o)</option>
+              <option value="smart">Smart (Claude 3.5)</option>
+            </select>
+          </div>
+
+          <button id="verify-btn" class="btn-primary">
+            🔍 开始验证
+          </button>
+        </div>
+      </section>
+
+      <!-- 加载状态 -->
+      <section id="loading-section" class="loading-section hidden">
+        <div class="loading-spinner"></div>
+        <p id="loading-text">正在分析...</p>
+        <div class="loading-steps">
+          <div class="step" data-step="1">✓ 理解论点</div>
+          <div class="step" data-step="2">→ 检索证据</div>
+          <div class="step" data-step="3">→ AI 分析</div>
+          <div class="step" data-step="4">→ 生成结论</div>
+        </div>
+      </section>
+
+      <!-- 结果区 -->
+      <section id="result-section" class="result-section hidden">
+        <div class="verdict-card" id="verdict-card">
+          <div class="verdict-icon" id="verdict-icon">✓</div>
+          <div class="verdict-content">
+            <h2 id="verdict-title">高度可能</h2>
+            <p class="confidence" id="verdict-confidence">置信度: 85%</p>
+            <div class="confidence-bar">
+              <div class="confidence-fill" id="confidence-fill" style="width: 85%"></div>
+            </div>
+            <p class="reasoning" id="verdict-reasoning">
+              基于最近7天的分析...
+            </p>
+          </div>
+        </div>
+
+        <div class="evidence-summary" id="evidence-summary">
+          <span>支持: <strong id="count-supporting">0</strong></span>
+          <span>反对: <strong id="count-refuting">0</strong></span>
+          <span>中性: <strong id="count-neutral">0</strong></span>
+        </div>
+
+        <h3>📚 证据链</h3>
+        <div class="evidence-list" id="evidence-list">
+          <!-- 证据卡片由 JS 生成 -->
+        </div>
+
+        <div class="result-actions">
+          <button class="btn-secondary" id="reanalyze-btn">🔄 重新分析</button>
+          <button class="btn-secondary" id="save-btn">📌 保存结果</button>
+          <button class="btn-secondary" id="publish-btn">📤 发布到博客</button>
+        </div>
+      </section>
+
+      <!-- 历史记录 -->
+      <section class="history-section">
+        <h2>📋 历史记录</h2>
+        <div id="history-list" class="history-list">
+          <p class="empty-state">暂无历史记录</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/claim-verifier.js"></script>
+  </body>
+</html>
