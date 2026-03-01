@@ -116,56 +116,25 @@ function getCustomDays() {
 
 // 调用验证 API
 async function callVerifyAPI(params) {
-  // TODO: 替换为实际的 API 调用
-  // const response = await fetch('/api/verify-claim', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(params)
-  // });
-  // return await response.json();
-
-  // MVP: 模拟 API 调用
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        verdict: 'INCONCLUSIVE',
-        verdict_display: '无法判断',
-        confidence: 50,
-        reasoning: '基于最近' + params.timeWindow + '天的分析，找到相关证据，但信息不足以得出明确结论。',
-        evidence: {
-          supporting: [
-            {
-              title: 'Google Gemini 2.0 多模态能力增强',
-              source: 'Google Blog',
-              source_type: 'official',
-              url: 'https://blog.google',
-              published_at: '2026-02-28T10:00:00Z',
-              summary: 'Google 发布了更强的多模态能力...',
-              relevance_score: 0.95
-            }
-          ],
-          refuting: [],
-          neutral: [
-            {
-              title: 'AI 行业分析报告',
-              source: 'TechCrunch',
-              source_type: 'media',
-              url: 'https://techcrunch.com',
-              published_at: '2026-02-27T15:00:00Z',
-              summary: '分析师对 AI 趋势的观察...',
-              relevance_score: 0.75
-            }
-          ]
-        },
-        stats: {
-          total: 274,
-          supporting_count: 18,
-          refuting_count: 3,
-          neutral_count: 253
-        }
-      });
-    }, 2000);
+  const response = await fetch('/api/verify-claim', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      claim: params.claim,
+      time_window: params.timeWindow,
+      min_confidence: 0,
+      llm_model: params.model
+    })
   });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.detail || '请求失败');
+  }
+
+  return await response.json();
 }
 
 // 显示加载状态
