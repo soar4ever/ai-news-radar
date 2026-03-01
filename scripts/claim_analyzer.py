@@ -7,14 +7,12 @@
 from __future__ import annotations
 
 import json
-import subprocess
 from dataclasses import dataclass
-from pathlib import Path
-from typing import List, Optional
-from enum import Enum
+from typing import List
 
 from claim_understander import ClaimAnalysis
 from evidence_retriever import Evidence, EvidenceSet
+from llm_service import LLMService, ModelType
 
 
 class Verdict(Enum):
@@ -45,29 +43,16 @@ class ClaimAnalyzer:
             model: 模型选择 (fast/standard/smart)
         """
         self.model = model
-        self.model_config = self._get_model_config(model)
+        self.llm_service = self._get_llm_service(model)
 
-    def _get_model_config(self, model: str) -> dict:
-        """获取模型配置"""
-        # 对应 cc switch 的模型
-        configs = {
-            "fast": {
-                "name": "GPT-4o mini",
-                "tool": "fast",
-                "description": "成本低，速度快"
-            },
-            "standard": {
-                "name": "GPT-4o",
-                "tool": "standard",
-                "description": "平衡质量和成本"
-            },
-            "smart": {
-                "name": "Claude 3.5 Sonnet",
-                "tool": "smart",
-                "description": "最高质量"
-            }
+    def _get_llm_service(self, model: str) -> LLMService:
+        """获取 LLM 服务实例"""
+        model_mapping = {
+            "fast": ModelType.FAST,
+            "standard": ModelType.STANDARD,
+            "smart": ModelType.SMART,
         }
-        return configs.get(model, configs["fast"])
+        return LLMService(model_mapping.get(model, ModelType.FAST))
 
     def analyze(
         self,
@@ -86,16 +71,26 @@ class ClaimAnalyzer:
         Returns:
             AnalysisResult 对象
         """
-        # 1. 准备提示词
-        prompt = self._build_prompt(claim_text, evidence, claim_analysis)
+        # 1. 准备证据摘要
+        evidence_summary = self._build_evidence_summary(evidence)
 
-        # 2. 调用 LLM
-        llm_response = self._call_llm(prompt)
+        # 2. 调用 LLM 服务
+        llm_result = self.llm_service.analyze_claim(
+            claim_text=claim_text,
+            evidence_summary=evidence_summary,
+            keywords=claim_analysis.keywords,
+            entities=claim_analysis.entities,
+        )
 
-        # 3. 解析响应
-        result = self._parse_response(llm_response, evidence)
-
-        return result
+        # 3. 判断是否使用 LLM 结果
+        if llm_result:
+            # LLM 可用，使用 LLM 结果
+            print("  ✓ 使用 LLM 分析结果")
+            return self._build_result_from_llm(llm_result, evidence)
+        else:
+            # LLM 不可用，使用规则引擎
+            print("  ⚠️  LLM 不可用，使用规则引擎")
+            return self._rule_based_analysis(evidence)
 
     def _build_prompt(
         self,
@@ -174,10 +169,9 @@ class ClaimAnalyzer:
         # 暂时使用规则引擎
         return self._rule_based_analysis(prompt)
 
-    def _rule_based_analysis(self, prompt: str) -> str:
+    def _rule_based_analysis(self, evidence: EvidenceSet) -> AnalysisResult:
         """基于规则的分析（MVP 降级方案）"""
-        # 简单的关键词分析
-        prompt_lower = prompt.lower()
+        # 简单的关键词分析（降级方案）
 
         # 提取支持/反对证据数量
         supporting_count = prompt.count("支持证据:")

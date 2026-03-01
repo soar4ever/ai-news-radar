@@ -4,3 +4,7 @@ __pycache__/
 .DS_Store
 feeds/*.opml
 !feeds/*.example.opml
+
+# 环境变量（包含 API Keys）
+.env
+.env.local
