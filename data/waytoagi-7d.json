@@ -1,23 +1,33 @@
 {
-  "generated_at": "2026-04-16T08:59:32.746048Z",
+  "generated_at": "2026-04-16T10:17:26.818312Z",
   "timezone": "Asia/Shanghai",
   "root_url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview",
   "history_url": "https://waytoagi.feishu.cn/wiki/FjiOwWp2giA7hRk6jjfcPioCnAc",
   "window_days": 7,
   "latest_date": "2026-04-16",
-  "count_today": 1,
+  "count_today": 2,
   "updates_today": [
     {
       "date": "2026-04-16",
       "title": "摆脱单一AI的思维局限，云舒从代码多子Agent校验中获得灵感，打造出多视角深度分析Skill。通过十位精英视角独立研判，精准戳破复盘过多、产出不足的盲区，在增长、产品、内容等方向给出破局建议，最终确立兴趣驱动的创作模式。这套方法能有效打破认知茧房，现在已经开源可直接安装，快来试试！",
       "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
+    },
+    {
+      "date": "2026-04-16",
+      "title": "成峰最近把他的剪辑 Agent 的字幕功能重做了一遍。跑一条指令，剪映首页多出一个新草稿。双击打开，字幕全在时间轴上，花字和入场动画都已经配好了。字幕准确率 95%，有口播稿能到 99%。",
+      "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
     }
   ],
-  "count_7d": 42,
+  "count_7d": 43,
   "updates_7d": [
     {
       "date": "2026-04-16",
       "title": "摆脱单一AI的思维局限，云舒从代码多子Agent校验中获得灵感，打造出多视角深度分析Skill。通过十位精英视角独立研判，精准戳破复盘过多、产出不足的盲区，在增长、产品、内容等方向给出破局建议，最终确立兴趣驱动的创作模式。这套方法能有效打破认知茧房，现在已经开源可直接安装，快来试试！",
+      "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
+    },
+    {
+      "date": "2026-04-16",
+      "title": "成峰最近把他的剪辑 Agent 的字幕功能重做了一遍。跑一条指令，剪映首页多出一个新草稿。双击打开，字幕全在时间轴上，花字和入场动画都已经配好了。字幕准确率 95%，有口播稿能到 99%。",
       "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
     },
     {
