@@ -1,20 +1,40 @@
 {
-  "generated_at": "2026-04-18T16:29:26.320438Z",
+  "generated_at": "2026-04-18T17:06:23.706028Z",
   "timezone": "Asia/Shanghai",
   "root_url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview",
   "history_url": "https://waytoagi.feishu.cn/wiki/FjiOwWp2giA7hRk6jjfcPioCnAc",
   "window_days": 7,
   "latest_date": "2026-04-18",
-  "count_today": 1,
+  "count_today": 3,
   "updates_today": [
+    {
+      "date": "2026-04-18",
+      "title": "阿里推出世界模型HappyOyster（快乐生蚝），支持一句话生成可漫游、可导演、可创造、可分享的交互式 3D 世界。用户能用 WASD 自由探索，生成中实时改剧情与镜头，还可以保存分享二创，实现从 “看视频” 到 “进世界” 的体验跃迁。目前处于内测阶段，来看看大聪明的全面测评与解读。",
+      "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
+    },
+    {
+      "date": "2026-04-18",
+      "title": "Notion 的 Sarah Sachs 和 Simon Last。前者负责 Notion 的核心 AI 能力与基础设施，后者长期站在原型和 agent harness 的最前线。Notion要做的，并不是给文档软件外挂一个会聊天的助手，而是把企业记录工作、协作工作、检索工作、推进工作的底层系统，一点点改造成既能给人用，也能给 Agent 用。如果你正在做 AI 产品、企业软件，或者正在琢磨 MCP、Eval、检索和工作流自动化，这期对话的信息密度非常高。",
+      "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
+    },
     {
       "date": "2026-04-18",
       "title": "Hermes Agent 是当前最前沿的开源 AI 智能体框架之一，其最大亮点是具备 “自我进化”能力，相比OpenClaw，Hermes Agent 得到了更精细的优化，而Hermes Agent没有对windows原生支持，经过两天的踩坑，终于跑出来两个能够在Windows中部署Hermes Agent的方式，以下是部署的两个教程。",
       "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
     }
   ],
-  "count_7d": 34,
+  "count_7d": 36,
   "updates_7d": [
+    {
+      "date": "2026-04-18",
+      "title": "阿里推出世界模型HappyOyster（快乐生蚝），支持一句话生成可漫游、可导演、可创造、可分享的交互式 3D 世界。用户能用 WASD 自由探索，生成中实时改剧情与镜头，还可以保存分享二创，实现从 “看视频” 到 “进世界” 的体验跃迁。目前处于内测阶段，来看看大聪明的全面测评与解读。",
+      "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
+    },
+    {
+      "date": "2026-04-18",
+      "title": "Notion 的 Sarah Sachs 和 Simon Last。前者负责 Notion 的核心 AI 能力与基础设施，后者长期站在原型和 agent harness 的最前线。Notion要做的，并不是给文档软件外挂一个会聊天的助手，而是把企业记录工作、协作工作、检索工作、推进工作的底层系统，一点点改造成既能给人用，也能给 Agent 用。如果你正在做 AI 产品、企业软件，或者正在琢磨 MCP、Eval、检索和工作流自动化，这期对话的信息密度非常高。",
+      "url": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e?fromScene=spaceOverview"
+    },
     {
       "date": "2026-04-18",
       "title": "Hermes Agent 是当前最前沿的开源 AI 智能体框架之一，其最大亮点是具备 “自我进化”能力，相比OpenClaw，Hermes Agent 得到了更精细的优化，而Hermes Agent没有对windows原生支持，经过两天的踩坑，终于跑出来两个能够在Windows中部署Hermes Agent的方式，以下是部署的两个教程。",
