@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-22T15:44:45.106094Z",
+  "generated_at": "2026-05-22T17:45:01.882612Z",
   "sites": [
     {
       "site_id": "techurls",
       "site_name": "TechURLs",
       "ok": true,
       "item_count": 405,
-      "duration_ms": 309,
+      "duration_ms": 442,
       "error": null
     },
     {
@@ -14,39 +14,39 @@
       "site_name": "Buzzing",
       "ok": true,
       "item_count": 744,
-      "duration_ms": 278,
+      "duration_ms": 323,
       "error": null
     },
     {
       "site_id": "iris",
       "site_name": "Info Flow",
       "ok": true,
-      "item_count": 534,
-      "duration_ms": 12786,
+      "item_count": 361,
+      "duration_ms": 9795,
       "error": null
     },
     {
       "site_id": "bestblogs",
       "site_name": "BestBlogs",
-      "ok": false,
-      "item_count": 0,
-      "duration_ms": 6807,
-      "error": "HTTPSConnectionPool(host='www.bestblogs.dev', port=443): Max retries exceeded with url: /en/newsletter (Caused by ResponseError('too many 502 error responses'))"
+      "ok": true,
+      "item_count": 1,
+      "duration_ms": 850,
+      "error": null
     },
     {
       "site_id": "tophub",
       "site_name": "TopHub",
       "ok": true,
-      "item_count": 3057,
-      "duration_ms": 1332,
+      "item_count": 3048,
+      "duration_ms": 1573,
       "error": null
     },
     {
       "site_id": "zeli",
       "site_name": "Zeli",
       "ok": true,
-      "item_count": 68,
-      "duration_ms": 615,
+      "item_count": 67,
+      "duration_ms": 479,
       "error": null
     },
     {
@@ -54,7 +54,7 @@
       "site_name": "AI HubToday",
       "ok": true,
       "item_count": 10,
-      "duration_ms": 340,
+      "duration_ms": 197,
       "error": null
     },
     {
@@ -62,7 +62,7 @@
       "site_name": "AIbase",
       "ok": true,
       "item_count": 20,
-      "duration_ms": 2221,
+      "duration_ms": 1203,
       "error": null
     },
     {
@@ -70,7 +70,7 @@
       "site_name": "AI今日热榜",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 44,
+      "duration_ms": 48,
       "error": "403 Client Error: Forbidden for url: https://aihot.today/"
     },
     {
@@ -78,19 +78,18 @@
       "site_name": "NewsNow",
       "ok": true,
       "item_count": 144,
-      "duration_ms": 393,
+      "duration_ms": 409,
       "error": null
     }
   ],
-  "successful_sites": 8,
+  "successful_sites": 9,
   "failed_sites": [
-    "bestblogs",
     "aihot"
   ],
   "zero_item_sites": [],
-  "fetched_raw_items": 4982,
-  "items_before_topic_filter": 8891,
-  "items_in_24h": 912,
+  "fetched_raw_items": 4800,
+  "items_before_topic_filter": 7184,
+  "items_in_24h": 814,
   "rss_opml": {
     "enabled": false,
     "path": null,
